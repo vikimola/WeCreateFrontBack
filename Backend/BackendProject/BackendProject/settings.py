@@ -60,14 +60,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
+
 ]
 
-CORS_ALLOW_ALL_ORIGINS: True
-
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
-]
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ORIGIN_WHITELIST = (
+    'http://localhost:3001',
+    'http://localhost:3000',
+)
 
 ROOT_URLCONF = 'BackendProject.urls'
 
