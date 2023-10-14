@@ -9,7 +9,7 @@ import {FaFacebookF, FaInstagram} from "react-icons/fa";
 
 
 export default function FooterLeft(props) {
-    const companyLogo = require("../image/page1/img_1.png")
+    const companyLogo = require("../image/page1/WeCreateLogo.png")
 
     return (
         <div className="footer-left">

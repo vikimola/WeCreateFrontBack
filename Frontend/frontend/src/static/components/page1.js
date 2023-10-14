@@ -1,22 +1,19 @@
 import React from 'react';
-import {Box, Button, Grid, styled, useMediaQuery} from "@mui/material";
+import {Button, Grid, useMediaQuery} from "@mui/material";
 import {FormattedMessage} from "react-intl";
 import Typography from "@mui/material/Typography";
-import companyLogo from "../image/WECREATE_no_bg.png";
-import logoG1 from "../image/page1/circuit_g.png";
 import {NavLink} from "react-router-dom";
-import page1img from "../image/page1/computer.png";
 
 
 export default function Page1(props) {
-    const p1MainImgLight = require('../image/page1/computer4.png')
-    const p1MainImgDark = require('../image/page1/computer5.png')
-    const logoG1 = require('../image/page1/earth_g2.png')
-    const logoW1 = require('../image/page1/earth_w2.png')
-    const logoG2 = require('../image/page1/circuit_g2.png')
-    const logoW2 = require('../image/page1/circuit_w2.png')
-    const logoG3 = require('../image/page1/design_g2.png')
-    const logoW3 = require('../image/page1/design_w.png')
+    const p1MainImgLight = require('../image/page1/computerLight.png')
+    const p1MainImgDark = require('../image/page1/computerDark.png')
+    const logoG1 = require('../image/page1/earthLight.png')
+    const logoW1 = require('../image/page1/earthDark.png')
+    const logoG2 = require('../image/page1/circuitLight.png')
+    const logoW2 = require('../image/page1/circuitDark.png')
+    const logoG3 = require('../image/page1/designLight.png')
+    const logoW3 = require('../image/page1/designDark.png')
     const logoG4 = require('../image/page1/startup_g.png')
     const logoW4 = require('../image/page1/startup_w3.png')
     const GradientContainer = props.bgGradient

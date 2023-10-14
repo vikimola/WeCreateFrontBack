@@ -1,5 +1,5 @@
 import {Box, Menu, MenuItem, styled, useMediaQuery} from "@mui/material";
-import companyLogo from "../image/page1/img_1.png";
+import companyLogo from "../image/page1/WeCreateLogo.png";
 import {FormattedMessage} from "react-intl";
 import React, {useState} from "react";
 import IconButton from "@mui/material/IconButton";

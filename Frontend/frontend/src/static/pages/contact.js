@@ -13,7 +13,7 @@ import CheckIcon from "@mui/icons-material/Check";
 export default function Contact(props) {
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     const GradientContainer = props.bgGradient
-    const companyLogo = require("../image/page1/img_1.png")
+    const companyLogo = require("../image/page1/WeCreateLogo.png")
     const outreachLight = require("../image/contact/outreach2.png")
     const outreachDark = require("../image/contact/outreach.png")
     const [successMessage, setSuccessMessage] = useState('');
