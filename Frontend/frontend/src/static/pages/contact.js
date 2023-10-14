@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import axios from 'axios';
 import Header from "../components/header";
 import Typography from "@mui/material/Typography";
@@ -20,6 +20,7 @@ export default function Contact(props) {
     const [warningMessage, setWarningMessage] = useState('');
     const [openSuccess, setOpenSuccess] = useState(false);
     const [openWarning, setOpenWarning] = useState(false);
+    const alertRef = useRef(null);
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -58,6 +59,27 @@ export default function Contact(props) {
     const handleCloseWarning = () => {
         setOpenWarning(false);
     };
+
+    const resizeObserver = new ResizeObserver(() => {
+        if (alertRef.current) {
+            const {width, height} = alertRef.current.getBoundingClientRect();
+            if (width === 0 || height === 0) {
+                setOpenSuccess(false);
+                setOpenWarning(false);
+            }
+        }
+    });
+
+    useEffect(() => {
+        if (alertRef.current) {
+            resizeObserver.observe(alertRef.current);
+        }
+
+        return () => {
+            // Clean up the ResizeObserver
+            resizeObserver.disconnect();
+        };
+    }, []);
 
 
     return (
@@ -359,46 +381,46 @@ export default function Contact(props) {
                                          width: isSmallScreen ? '100%' : '60%'
                                      }}>
 
-
-                            {openSuccess && (
-                                <div>
-                                    <Button
-                                        aria-label="close"
-                                        color="inherit"
-                                        size="small"
-                                        sx={{textTransform: 'none'}}
-                                    > <Alert onClick={handleCloseSuccess} icon={<CheckIcon fontSize="inherit"/>}
-                                             severity="success" sx={{width: '100%'}}>
-                                        <Typography component={'span'} variant="body2">
-                                            {successMessage}
-                                        </Typography>
-
-                                    </Alert>
-                                    </Button>
-                                    <br/>
-                                    <br/>
-                                </div>)}
-
-
-                            {openWarning && (
-                                <div>
-                                    <Button
-                                        aria-label="close"
-                                        color="inherit"
-                                        size="small"
-                                        sx={{textTransform: 'none'}}>
-                                        <Alert onClick={handleCloseWarning} severity="warning" sx={{width: '100%'}}>
+                            <div ref={alertRef}>
+                                {openSuccess && (
+                                    <div>
+                                        <Button
+                                            aria-label="close"
+                                            color="inherit"
+                                            size="small"
+                                            sx={{textTransform: 'none'}}
+                                        > <Alert onClick={handleCloseSuccess} icon={<CheckIcon fontSize="inherit"/>}
+                                                 severity="success" sx={{width: '100%'}}>
                                             <Typography component={'span'} variant="body2">
-                                                {warningMessage}
+                                                {successMessage}
                                             </Typography>
+
                                         </Alert>
-                                    </Button>
-                                    <br/>
-                                    <br/>
-                                </div>
-                            )}
+                                        </Button>
+                                        <br/>
+                                        <br/>
+                                    </div>)}
 
 
+                                {openWarning && (
+                                    <div>
+                                        <Button
+                                            aria-label="close"
+                                            color="inherit"
+                                            size="small"
+                                            sx={{textTransform: 'none'}}>
+                                            <Alert onClick={handleCloseWarning} severity="warning" sx={{width: '100%'}}>
+                                                <Typography component={'span'} variant="body2">
+                                                    {warningMessage}
+                                                </Typography>
+                                            </Alert>
+                                        </Button>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                )}
+
+                            </div>
                             <Button variant="contained" style={{width: '50%'}} color="secondary"
                                     onClick={() => handleSubmit(formData)}>
                                 <Typography component={'span'} variant="body2">
