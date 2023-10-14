@@ -48,16 +48,18 @@
   "serv.bottom.gdpr3": " and ",
   "serv.bottom.gdpr4": "Terms and conditions",
   "serv.bottom.gdpr5": ".",
+  "serv.sub.alert.succ": "Subscribe succesful!",
+  "serv.sub.alert.warn": "We couldn't add your e-mail to our mailing list! Check if your e-mail is correct.",
+
+
   "serv.bottom.unsub1": "Unsubscribe",
   "serv.bottom.unsub2": " at any time. We respect your privacy and won't share your email address with anyone.",
   "newsletter.unsub.title": "Newsletter Unsubscribe",
   "newsletter.unsub.email": "Mail",
   "newsletter.unsub.email.helper": "Sad to see you go",
   "newsletter.unsub.button": "Unsubscribe",
-  "newsletter.unsub.alert.succ": "",
-  "newsletter.unsub.alert.succ2": "",
-  "newsletter.unsub.alert.warn": "",
-  "newsletter.unsub.alert.warn2": "Shhesh",
+  "newsletter.unsub.alert.succ": "Unsubscribe succesful! ",
+  "newsletter.unsub.alert.warn": "We couldn't find your e-mail in our mailing list! Check if your e-mail is correct.",
   "tech.title": "Technologies",
   "tech.description": "Web development technologies encompass a wide range of tools and frameworks used to create websites and web applications. These technologies include HTML, CSS, and JavaScript as the foundational languages, along with various frameworks and libraries such as React and Angular, for frontend development, and server-side technologies like Node.js, Python (with Django or Flask), and Ruby on Rails for backend development.",
   "tech.react.title": "React",
@@ -118,6 +120,12 @@
   "contact.form.message": "Message",
   "contact.form.message.helper": "Ask us anything!",
   "contact.form.submit": "",
+
+  "contact.sub.alert.succ": "Form sent successfully!",
+  "contact.sub.alert.warn": "Error occured! Try sending again.",
+
+
+
   "footer.company.name": "WECREATE DESIGNS S.R.L.",
   "footer.toggle.theme": "Theme:",
   "footer.company.address1": "Harghita county, Mihăileni municipality,",

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Header from "../components/header";
 import Typography from "@mui/material/Typography";
 import {FormattedMessage} from "react-intl";
-import {Button, Divider, FormControl, FormHelperText, Grid, TextField, useMediaQuery} from "@mui/material";
+import {Alert, Button, Divider, FormControl, FormHelperText, Grid, TextField, useMediaQuery} from "@mui/material";
 import {BsSun} from 'react-icons/bs';
 import {HiMiniLanguage} from 'react-icons/hi2';
 import {BiDotsHorizontalRounded, BiMessageSquareDetail, BiSearchAlt} from 'react-icons/bi';
@@ -12,6 +12,7 @@ import {SlEnvolopeLetter} from "react-icons/sl";
 import {CgProfile} from "react-icons/cg";
 import {NavLink} from "react-router-dom";
 import axios from "axios";
+import CheckIcon from "@mui/icons-material/Check";
 
 
 export default function Services(props) {
@@ -20,6 +21,10 @@ export default function Services(props) {
     const GradientContainer = props.bgGradient
     const computer = require("../image/services/computer.png")
     const comp = require("../image/services/comp2.png")
+    const [successMessage, setSuccessMessage] = useState('');
+    const [warningMessage, setWarningMessage] = useState('');
+    const [openSuccess, setOpenSuccess] = useState(false);
+    const [openWarning, setOpenWarning] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
     });
@@ -35,10 +40,16 @@ export default function Services(props) {
 
     const handleSubmit = async (formData) => {
         try {
-            const response = await axios.post('backend/api/newsletter/subscribe/', formData);
-            console.log('AAAAAAAAAAAAAAA', response.data);
+            await axios.post('backend/api/newsletter/subscribe/', formData);
+            const messageS = <FormattedMessage id='serv.sub.alert.succ'/>
+            setSuccessMessage(messageS);
+            setOpenSuccess(true);
+            setOpenWarning(false);
         } catch (error) {
-            console.error('BBBBBBBBBBBBBBBBBB', error);
+            const messageW = <FormattedMessage id='serv.sub.alert.warn'/>
+            setWarningMessage(messageW);
+            setOpenSuccess(false);
+            setOpenWarning(true);
         }
     };
 
@@ -48,6 +59,14 @@ export default function Services(props) {
             top: 0,
             behavior: 'smooth', // Optional: Adds smooth scrolling animation
         });
+    };
+
+    const handleCloseSuccess = () => {
+        setOpenSuccess(false);
+    };
+
+    const handleCloseWarning = () => {
+        setOpenWarning(false);
     };
 
 
@@ -317,6 +336,47 @@ export default function Services(props) {
                             </Typography>
                         </FormHelperText>
                         <br/>
+
+
+                        {openSuccess && (
+                            <div>
+                                <Button
+                                    aria-label="close"
+                                    color="inherit"
+                                    size="small"
+                                    sx={{textTransform: 'none'}}
+                                > <Alert onClick={handleCloseSuccess} icon={<CheckIcon fontSize="inherit"/>}
+                                         severity="success" sx={{width: '100%'}}>
+                                    <Typography component={'span'} variant="body2">
+                                        {successMessage}
+                                    </Typography>
+
+                                </Alert>
+                                </Button>
+                                <br/>
+                                <br/>
+                            </div>)}
+
+
+                        {openWarning && (
+                            <div>
+                                <Button
+                                    aria-label="close"
+                                    color="inherit"
+                                    size="small"
+                                    sx={{textTransform: 'none'}}>
+                                    <Alert onClick={handleCloseWarning} severity="warning" sx={{width: '100%'}}>
+                                        <Typography component={'span'} variant="body2">
+                                            {warningMessage}
+                                        </Typography>
+                                    </Alert>
+                                </Button>
+                                <br/>
+                                <br/>
+                            </div>
+                        )}
+
+
                         <NavLink
                             className="header-logo-navlink"
                             to="/servicii">

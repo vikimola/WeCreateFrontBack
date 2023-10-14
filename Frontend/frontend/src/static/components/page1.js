@@ -22,7 +22,12 @@ export default function Page1(props) {
     const GradientContainer = props.bgGradient
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
     const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
-
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth', // Optional: Adds smooth scrolling animation
+        });
+    };
 
     return (
         <GradientContainer>
@@ -54,7 +59,7 @@ export default function Page1(props) {
                         <div className="page1-top-first-button-container">
                             <NavLink
                                 className="header-logo-navlink"
-                                to="/servicii">
+                                to="/servicii" onClick={scrollToTop}>
                                 <Button className="page1-top-first-button" variant="contained" color="secondary">
                                     <Typography variant='h6' style={{color: "#E0F2F1"}}>
                                         <FormattedMessage id='page1.button.text'

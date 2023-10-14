@@ -3,10 +3,11 @@ import axios from 'axios';
 import Header from "../components/header";
 import Typography from "@mui/material/Typography";
 import {FormattedMessage} from "react-intl";
-import {Button, FormControl, FormHelperText, FormLabel, Grid, TextField, useMediaQuery} from "@mui/material";
+import {Alert, Button, FormControl, FormHelperText, FormLabel, Grid, TextField, useMediaQuery} from "@mui/material";
 import {BiMap, BiPhoneCall} from "react-icons/bi";
 import {LuMails} from "react-icons/lu";
 import {AiOutlineFieldTime, AiOutlineInfoCircle} from "react-icons/ai";
+import CheckIcon from "@mui/icons-material/Check";
 
 
 export default function Contact(props) {
@@ -15,6 +16,10 @@ export default function Contact(props) {
     const companyLogo = require("../image/page1/img_1.png")
     const outreachLight = require("../image/contact/outreach2.png")
     const outreachDark = require("../image/contact/outreach.png")
+    const [successMessage, setSuccessMessage] = useState('');
+    const [warningMessage, setWarningMessage] = useState('');
+    const [openSuccess, setOpenSuccess] = useState(false);
+    const [openWarning, setOpenWarning] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -33,11 +38,25 @@ export default function Contact(props) {
 
     const handleSubmit = async (formData) => {
         try {
-            const response = await axios.post('backend/api/create_message/', formData);
-            console.log('Message sent successfully:', response.data);
+            await axios.post('backend/api/create_message/', formData);
+            const messageS = <FormattedMessage id='contact.sub.alert.succ'/>
+            setSuccessMessage(messageS);
+            setOpenSuccess(true);
+            setOpenWarning(false);
         } catch (error) {
-            console.error('Error sending message:', error);
+            const messageW = <FormattedMessage id='contact.sub.alert.warn'/>
+            setWarningMessage(messageW);
+            setOpenSuccess(false);
+            setOpenWarning(true);
         }
+    };
+
+    const handleCloseSuccess = () => {
+        setOpenSuccess(false);
+    };
+
+    const handleCloseWarning = () => {
+        setOpenWarning(false);
     };
 
 
@@ -332,29 +351,54 @@ export default function Contact(props) {
 
                         <br/>
 
-                        {/*<Stack sx={{width: '100%'}} spacing={2} className="contact-middle-form-alert">*/}
-                        {/*    <Alert severity="error" sx={{width: '70%'}}>*/}
-                        {/*        <Typography component={'span'} variant="body2">*/}
-                        {/*            <FormattedMessage id='contact.form.submit.error'*/}
-                        {/*                              defaultMessage="Err"/>*/}
-                        {/*        </Typography>*/}
-                        {/*    </Alert>*/}
-                        {/*    <Alert icon={<CheckIcon fontSize="inherit"/>} severity="success" sx={{width: '70%'}}>*/}
-                        {/*        <Typography component={'span'} variant="body2">*/}
-                        {/*            <FormattedMessage id='contact.form.submit.success'*/}
-                        {/*                              defaultMessage="Succ"/>*/}
-                        {/*        </Typography>*/}
-                        {/*    </Alert>*/}
-                        {/*</Stack>*/}
-
-
                         <FormControl margin="normal"
                                      color="primary"
                                      variant="filled"
                                      sx={{
-                                         display: 'flex', flexDirection: 'row', justifyContent: 'center',
+                                         display: 'flex', flexDirection: 'column', justifyContent: 'center',
                                          width: isSmallScreen ? '100%' : '60%'
                                      }}>
+
+
+                            {openSuccess && (
+                                <div>
+                                    <Button
+                                        aria-label="close"
+                                        color="inherit"
+                                        size="small"
+                                        sx={{textTransform: 'none'}}
+                                    > <Alert onClick={handleCloseSuccess} icon={<CheckIcon fontSize="inherit"/>}
+                                             severity="success" sx={{width: '100%'}}>
+                                        <Typography component={'span'} variant="body2">
+                                            {successMessage}
+                                        </Typography>
+
+                                    </Alert>
+                                    </Button>
+                                    <br/>
+                                    <br/>
+                                </div>)}
+
+
+                            {openWarning && (
+                                <div>
+                                    <Button
+                                        aria-label="close"
+                                        color="inherit"
+                                        size="small"
+                                        sx={{textTransform: 'none'}}>
+                                        <Alert onClick={handleCloseWarning} severity="warning" sx={{width: '100%'}}>
+                                            <Typography component={'span'} variant="body2">
+                                                {warningMessage}
+                                            </Typography>
+                                        </Alert>
+                                    </Button>
+                                    <br/>
+                                    <br/>
+                                </div>
+                            )}
+
+
                             <Button variant="contained" style={{width: '50%'}} color="secondary"
                                     onClick={() => handleSubmit(formData)}>
                                 <Typography component={'span'} variant="body2">

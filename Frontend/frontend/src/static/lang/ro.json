@@ -49,12 +49,16 @@
   "serv.bottom.gdpr5": " noastre.",
   "serv.bottom.unsub1": "Unsubscribe",
   "serv.bottom.unsub2": ": poți renunța la abonare în orice moment. Respectăm confidențialitatea ta și nu vom partaja adresa ta de email cu nimeni.",
+
+  "serv.sub.alert.succ": "Abonare cu succes!",
+  "serv.sub.alert.warn": "Nu am putut adăuga adresa ta de e-mail în lista noastră de corespondență! Verifică dacă adresa ta de e-mail este corectă.",
+
   "newsletter.unsub.title": "Dezabonare de la buletin informativ",
   "newsletter.unsub.email": "Email",
   "newsletter.unsub.email.helper": "Ne pare rău să te vedem plecând.",
   "newsletter.unsub.button": "Dezabonare",
-  "newsletter.unsub.alert.succ": "",
-  "newsletter.unsub.alert.warn": "",
+  "newsletter.unsub.alert.succ": "Dezabonarea a fost efectuată cu succes!",
+  "newsletter.unsub.alert.warn": "Nu am putut găsi adresa ta de e-mail în lista noastră de corespondență! Verifică dacă adresa de e-mail introdusă este corectă.",
   "tech.title": "Technologii",
   "tech.description": "Tehnologiile de dezvoltare web cuprind o gamă largă de instrumente și cadre de lucru utilizate pentru a crea site-uri web și aplicații web. Aceste tehnologii includ HTML, CSS și JavaScript ca limbaje de bază, împreună cu diverse cadre și biblioteci, precum React și Angular, pentru dezvoltarea frontend-ului, și tehnologii pentru partea de server, cum ar fi Node.js, Python (cu Django sau Flask) și Ruby on Rails pentru dezvoltarea backend-ului.",
   "tech.react.title": "React",
@@ -115,6 +119,11 @@
   "contact.form.message": "Mesaj",
   "contact.form.message.helper": "Întreabă-ne orice!",
   "contact.form.submit": "Trimite",
+
+    "contact.sub.alert.succ": "Formular trimis cu succes!",
+  "contact.sub.alert.warn": "A apărut o eroare! Încearcă să trimiți din nou.",
+
+
   "footer.company.name": "WECREATE DESIGNS S.R.L.",
   "footer.toggle.theme": "Tematică:",
   "footer.company.address1": "județ Harghita, comuna Mihăileni,",
