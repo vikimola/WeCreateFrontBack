@@ -19,8 +19,8 @@ export default function Services(props) {
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     const isSmallScreen2 = useMediaQuery('(max-width: 960px)');
     const GradientContainer = props.bgGradient
-    const computer = require("../image/services/computer.png")
-    const comp = require("../image/services/comp2.png")
+    const computer = require("../image/services/computer1.png")
+    const comp = require("../image/services/computer2.png")
     const [successMessage, setSuccessMessage] = useState('');
     const [warningMessage, setWarningMessage] = useState('');
     const [openSuccess, setOpenSuccess] = useState(false);

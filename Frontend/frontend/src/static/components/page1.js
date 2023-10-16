@@ -14,8 +14,8 @@ export default function Page1(props) {
     const logoW2 = require('../image/page1/circuitDark.png')
     const logoG3 = require('../image/page1/designLight.png')
     const logoW3 = require('../image/page1/designDark.png')
-    const logoG4 = require('../image/page1/startup_g.png')
-    const logoW4 = require('../image/page1/startup_w3.png')
+    const logoG4 = require('../image/page1/startupLight.png')
+    const logoW4 = require('../image/page1/startupDark.png')
     const GradientContainer = props.bgGradient
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
     const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));

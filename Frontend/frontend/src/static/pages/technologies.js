@@ -14,7 +14,7 @@ export default function Technologies(props) {
     const logoDj = require("../image/technology/django2.png")
     const logoMUI = require("../image/technology/mui.png")
     const logoGit = require("../image/technology/git.png")
-    const logoPy = require("../image/technology/python2.png")
+    const logoPy = require("../image/technology/python.png")
     const logoTs = require("../image/technology/typescript.png")
     const logoSQL = require("../image/technology/mySQL.png")
 

@@ -9,8 +9,8 @@ export default function About(props) {
     const GradientContainer = props.bgGradient
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     const isSmallScreen2 = useMediaQuery('(max-width: 960px)');
-    const imgFirstLight = require("../image/about/comp5.jpg")
-    const imgFirstDark = require("../image/about/comp2.jpg")
+    const imgFirstLight = require("../image/about/computerLight.jpg")
+    const imgFirstDark = require("../image/about/computerDark.jpg")
     const vision = require("../image/about/vision.jpg")
 
     const scrollToTop = () => {

@@ -10,8 +10,14 @@
   "page1.description.logo2": "Legújabb berendezések és legfrissebb technológiák",
   "page1.description.logo3": "Egyedien tervezett dizájn, amely tökéletesen alkalmazkodik az igényeidhez",
   "page1.description.logo4": "Fiatal és elkötelezett csapat rugalmas és alkalmazkodó gondolkodással",
-  "page.not.found.title": "404",
-  "page.not.found.description": "",
+
+
+ "page.not.found.title": "404",
+  "page.not.found.description1": "Az oldal nem található",
+  "page.not.found.description2": "Az Ön által keresett oldal nem található ezen a webhelyen. Kérjük, ellenőrizze az URL-t, majd próbálja újra.",
+
+
+
   "serv.title": "Szolgáltatásaink",
   "serv.description": "Amikor weboldalakat fejlesztünk, a megjelenésükre, funkcionalitásukra összpontosítunk, és erőfeszítéseket teszünk annak érdekében, hogy könnyen kezelhetőek legyenek az ügyfelek és azok végfelhasználói számára.",
   "serv.top.computer1": "Egy weboldal egy digitális platform, amely virtuális jelenlétet biztosít az egyéneknek, vállalkozásoknak vagy szervezeteknek az interneten, lehetőséget nyújtva információk, termékek vagy szolgáltatások bemutatására egy globális közönségnek.",
@@ -240,7 +246,10 @@
   "cookies.third.party.description5": "Mivel szolgáltatásokat értékesítünk, fontos számunkra, hogy megértsük a weboldalunk látogatóinak számára, hányan végeznek ténylegesen vásárlást, és ennek megfelelően ezek a sütik követik. Ez Önnek fontos, mert ez azt jelenti, hogy pontos üzleti előrejelzéseket készíthetünk, amelyek lehetővé teszik számunkra a reklám- és termékköltségek figyelemmel kísérését, hogy Önnek a lehető legjobb árat biztosítsuk.",
   "cookies.third.party.description6": "A weboldalunk működési költségeinek kompenzálása és további fejlesztési finanszírozás céljából hirdetéseket használunk. Ezen a webhelyen alkalmazott viselkedési célzású sütiket úgy tervezték, hogy anonim módon kövessék az Ön érdeklődési körét és olyan hasonló dolgokat mutassanak be, amelyek érdekesek lehetnek Önnek.",
   "cookies.third.party.description7": "Ezen a weboldalon emellett közösségi média gombokat és/vagy bővítményeket is használunk, amelyek lehetővé teszik a közösségi hálózatokkal való különböző kapcsolatfelvételeket. Az ehhez szükséges közösségi média weboldalak, mint például a Facebook, Twitter, Google+, YouTube, Pinterest, a következő sütiket helyezik el a weboldalunkon, amelyeket a profilja javítására vagy különböző célokra is felhasználhatnak, ahogy azt az adatvédelmi irányelveikben ismertetik.",
-  "gdpr.title": "Adatvédelmi Irányelv",
+  "cookie.popup.text": "Ez a weboldal cookie-kat használ annak érdekében, hogy a legjobb élményt nyújtsa Önnek a weboldalunkon.",
+
+
+ "gdpr.title": "Adatvédelmi Irányelv",
   "gdpr.info.collect.title": "Személyes információk gyűjtése",
   "gdpr.info.collect.1": "Weboldalunk látogatóinak információjik bizalmas kezelése kiemelten fontos számunkra, és elkötelezettek vagyunk a védelme mellett. Ragaszkodunk az 2018-as Európai Adatvédelmi Rendelethez. Ezen irányelv részletezi, hogyan fogjuk kezelni a személyes információkat.",
   "gdpr.info.collect.2": " Az első látogatáskor adott hozzájárulásával a sütik használatához ezen irányelvek szerint, lehetővé teszi számunkra, hogy minden alkalommal, amikor meglátogatja weboldalunkat, sütiket használjunk.",

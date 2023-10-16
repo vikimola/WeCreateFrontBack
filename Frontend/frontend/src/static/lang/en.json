@@ -9,10 +9,15 @@
   "page1.description.logo1": "The world in the palm of your hand: websites easily available from any location, at any time",
   "page1.description.logo2": "Newest equipment and latest technologies",
   "page1.description.logo3": "Exclusively crafted design, customized to perfectly fit your requirements",
+
   "page1.description.logo4": "Youthful and committed team with flexible and adaptive thinking",
+
+
   "page.not.found.title": "404",
   "page.not.found.description1": "Page not found",
   "page.not.found.description2": "The page you are looking for could not be found on this website. Please check the URL and try again.",
+
+
   "serv.title": "Our Services",
   "serv.description": "When we develop websites, we focus on their visual appearance, functionality, and make efforts to ensure easy management for clients and their end users.",
   "serv.top.computer1": "A website is a digital platform that provides a virtual presence for individuals, businesses, or organizations on the internet, offering a means to showcase information, products, or services to a global audience.",
@@ -247,6 +252,8 @@
   "cookies.third.party.description5": "As we sell services, it's important for us to understand statistics about the number of visitors to our site who actually make a purchase, and as such, this is the kind of data these cookies will track. This is important to you because it means we can accurately make business predictions that allow us to monitor advertising and product costs to ensure the best possible price for you.",
   "cookies.third.party.description6": "We use advertisements to offset the costs of running this site and provide funding for further development. The behavioral advertising cookies used by this site are designed to ensure we provide you with the most relevant ads where possible by anonymously tracking your interests and presenting similar things that may be of interest.",
   "cookies.third.party.description7": "We also use social media buttons and/or plugins on this site that allow you to connect with your social network in various ways. To make these work, the following social media sites, such as Facebook, Twitter, Google+, YouTube, Pinterest, will set cookies through our site, which may be used to enhance your profile on their site or contribute to the data they hold for various purposes as outlined in their privacy policies.",
+  "cookie.popup.text": "This website uses cookies to ensure you get the best experience on our website.",
+
   "gdpr.title": "Privacy Policy",
   "gdpr.info.collect.title": "Collection of Personal Information",
   "gdpr.info.collect.1": "Ensuring confidentiality for the visitors of our website is of utmost importance to us, and we are committed to safeguarding it. We adhere to the 2018 European Data Protection Regulation. This policy outlines how we will handle your personal information.",

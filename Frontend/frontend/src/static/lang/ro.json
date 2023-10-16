@@ -11,7 +11,8 @@
   "page1.description.logo3": "Design exclusiv creat special pentru a se potrivi perfect nevoilor tale",
   "page1.description.logo4": "Echipă tânără și dedicată, cu gândire flexibilă și adaptabilă",
   "page.not.found.title": "404",
-  "page.not.found.description": "",
+  "page.not.found.description1": "Pagină negăsită",
+  "page.not.found.description2": "Pagina pe care o căutați nu a putut fi găsită pe acest site web. Vă rugăm să verificați URL-ul și să încercați din nou.",
   "serv.title": "Serviciile Noastre",
   "serv.description": "Atunci când dezvoltăm site-uri web, ne concentrăm pe aspectul lor vizual, funcționalitate și facem eforturi pentru a asigura o gestionare ușoară pentru clienți și utilizatorii finali ai acestora.",
   "serv.top.computer1": "Un site web reprezintă o platformă digitală care oferă o prezență virtuală pentru persoane, afaceri sau organizații pe internet, furnizând un mijloc de prezentare a informațiilor, produselor sau serviciilor către o audiență globală. ",
@@ -49,10 +50,8 @@
   "serv.bottom.gdpr5": " noastre.",
   "serv.bottom.unsub1": "Unsubscribe",
   "serv.bottom.unsub2": ": poți renunța la abonare în orice moment. Respectăm confidențialitatea ta și nu vom partaja adresa ta de email cu nimeni.",
-
   "serv.sub.alert.succ": "Abonare cu succes!",
   "serv.sub.alert.warn": "Nu am putut adăuga adresa ta de e-mail în lista noastră de corespondență! Verifică dacă adresa ta de e-mail este corectă.",
-
   "newsletter.unsub.title": "Dezabonare de la buletin informativ",
   "newsletter.unsub.email": "Email",
   "newsletter.unsub.email.helper": "Ne pare rău să te vedem plecând.",
@@ -119,11 +118,8 @@
   "contact.form.message": "Mesaj",
   "contact.form.message.helper": "Întreabă-ne orice!",
   "contact.form.submit": "Trimite",
-
-    "contact.sub.alert.succ": "Formular trimis cu succes!",
+  "contact.sub.alert.succ": "Formular trimis cu succes!",
   "contact.sub.alert.warn": "A apărut o eroare! Încearcă să trimiți din nou.",
-
-
   "footer.company.name": "WECREATE DESIGNS S.R.L.",
   "footer.toggle.theme": "Tematică:",
   "footer.company.address1": "județ Harghita, comuna Mihăileni,",
@@ -245,6 +241,7 @@
   "cookies.third.party.description5": "Pe măsură ce vindem servicii, este important să înțelegem statisticile despre numărul de vizitatori pe site-ul nostru care fac efectiv o achiziție și, ca atare, acesta este tipul de date pe care aceste cookie-uri le vor urmări. Acest lucru este important pentru dvs., deoarece înseamnă că putem să facem cu exactitate previziuni de afaceri care să ne permită să monitorizăm costurile de publicitate și de produs pentru a vă asigura cel mai bun preț posibil.",
   "cookies.third.party.description6": "Utilizăm anunțuri pentru a compensa costurile de rulare a acestui site și pentru a oferi finanțare pentru dezvoltarea ulterioară. Cookie-urile de publicitate comportamentală utilizate de acest site sunt concepute astfel încât să vă asigurăm că vă oferim cele mai relevante anunțuri acolo unde este posibil prin urmărirea anonimă a intereselor și prezentarea unor lucruri similare care ar putea fi de interes.",
   "cookies.third.party.description7": "De asemenea, folosim butoane și / sau pluginuri de social media pe acest site care vă permit să vă conectați cu rețeaua socială în diferite moduri. Pentru ca acestea să funcționeze, următoarele site-uri de socializare: Facebook, Twitter, Google+, YouTube, Pinterest vor seta cookie-uri prin intermediul site-ului nostru, care pot fi utilizate pentru a îmbunătăți profilul dvs. pe site-ul lor sau pentru a contribui la datele pe care le dețin pentru diferite scopuri prezentate în politicile lor de confidențialitate.",
+  "cookie.popup.text": "Acest site utilizează cookie-uri pentru a vă asigura cea mai bună experiență pe site-ul nostru.",
   "gdpr.title": "Politica de confidențialitate",
   "gdpr.info.collect.title": "Colectarea informațiilor personale",
   "gdpr.info.collect.1": "Asigurarea confidențialității pentru vizitatorii site-ului nostru este de o importanță maximă pentru noi și suntem angajați să o protejăm. Ne conformăm Regulamentului European privind Protecția Datelor din 2018. Această politică descrie modul în care vom gestiona informațiile dvs. personale.",
