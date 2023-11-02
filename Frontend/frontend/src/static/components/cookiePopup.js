@@ -37,7 +37,7 @@ function CookieConsent() {
     return (
         showPopup && (
             <Paper className={classes.cookiePopup}>
-                <Typography variant="body1">
+                <Typography variant="body1" color="#E0E0E0" >
                     <FormattedMessage
                         id='cookie.popup.text'
                     />
