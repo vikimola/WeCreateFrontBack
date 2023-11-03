@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, Grid, Paper, Typography} from '@mui/material';
 import {makeStyles} from '@mui/styles';
 import CheckIcon from '@mui/icons-material/Check';
 import {FormattedMessage} from "react-intl";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import Cookies from 'js-cookie';
 
 const useStyles = makeStyles((theme) => ({
     cookiePopup: {
@@ -20,24 +21,29 @@ const useStyles = makeStyles((theme) => ({
 
 function CookieConsent() {
     const classes = useStyles();
-    const [showPopup, setShowPopup] = useState(!localStorage.getItem('accepted-cookies'));
+     const [showConsent, setShowConsent] = useState(false);
+
+    useEffect(() => {
+        const isConsentAccepted = Cookies.get('cookieConsentAccepted');
+        if (!isConsentAccepted) {
+            setShowConsent(true);
+        }
+    }, []);
 
     const acceptCookies = () => {
-        localStorage.setItem('accepted-cookies', 'true');
-        setShowPopup(false);
+        Cookies.set('cookieConsentAccepted', 'true', { expires: 365 }); // Set cookie for 1 year
+        setShowConsent(false);
     };
-
     const rejectCookies = () => {
-        localStorage.setItem('accepted-cookies', 'false');
-        setShowPopup(false);
+        Cookies.set('cookieConsentAccepted', 'false', { expires: 365 }); // Set cookie for 1 year
+        setShowConsent(false);
     };
-
     const handleClose = () => {
-        setShowPopup(false);
+        setShowConsent(false);
     };
 
     return (
-        showPopup && (
+        showConsent && (
             <Paper className={classes.cookiePopup}>
                 <Grid container justifyContent="flex-end" alignItems="center">
                     <IconButton onClick={handleClose}>
@@ -64,7 +70,6 @@ function CookieConsent() {
 
                 </Button>
 
-
                 <Button
                     variant="contained"
                     className="cookie-popup-button"
@@ -80,8 +85,6 @@ function CookieConsent() {
             </Paper>
 
         )
-
-
     );
 }
 
