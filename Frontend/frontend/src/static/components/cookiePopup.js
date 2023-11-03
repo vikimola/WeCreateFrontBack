@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 function CookieConsent() {
     const classes = useStyles();
-     const [showConsent, setShowConsent] = useState(false);
+    const [showConsent, setShowConsent] = useState(false);
 
     useEffect(() => {
         const isConsentAccepted = Cookies.get('cookieConsentAccepted');
