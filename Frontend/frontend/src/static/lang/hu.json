@@ -247,7 +247,8 @@
   "cookies.third.party.description6": "A weboldalunk működési költségeinek kompenzálása és további fejlesztési finanszírozás céljából hirdetéseket használunk. Ezen a webhelyen alkalmazott viselkedési célzású sütiket úgy tervezték, hogy anonim módon kövessék az Ön érdeklődési körét és olyan hasonló dolgokat mutassanak be, amelyek érdekesek lehetnek Önnek.",
   "cookies.third.party.description7": "Ezen a weboldalon emellett közösségi média gombokat és/vagy bővítményeket is használunk, amelyek lehetővé teszik a közösségi hálózatokkal való különböző kapcsolatfelvételeket. Az ehhez szükséges közösségi média weboldalak, mint például a Facebook, Twitter, Google+, YouTube, Pinterest, a következő sütiket helyezik el a weboldalunkon, amelyeket a profilja javítására vagy különböző célokra is felhasználhatnak, ahogy azt az adatvédelmi irányelveikben ismertetik.",
   "cookie.popup.text": "Ez a weboldal cookie-kat használ annak érdekében, hogy a legjobb élményt nyújtsa Önnek a weboldalunkon.",
-
+  "cookie.popup.button.accept": "Elfogadom",
+  "cookie.popup.button.reject": "Elutasítom",
 
  "gdpr.title": "Adatvédelmi Irányelv",
   "gdpr.info.collect.title": "Személyes információk gyűjtése",

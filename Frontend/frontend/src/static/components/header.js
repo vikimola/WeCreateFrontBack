@@ -1,24 +1,32 @@
-import {Box, Menu, MenuItem, styled, useMediaQuery} from "@mui/material";
+import {Box, Menu, styled, useMediaQuery} from "@mui/material";
 import companyLogo from "../image/page1/WeCreateLogo.png";
 import {FormattedMessage} from "react-intl";
-import React, {useState} from "react";
+import React from "react";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import AppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";
 import {NavLink} from "react-router-dom";
-import * as PropTypes from "prop-types";
+import logoText from "../image/header/logoText.png";
+import { useTheme } from '@material-ui/core/styles';
 
 
-FormattedMessage.propTypes = {children: PropTypes.node};
+// FormattedMessage.propTypes = {children: PropTypes.node};
 export default function Header() {
+    const logoIcon = require("../image/header/logoIcon.png");
+    const logoText = require("../image/header/logoText.png");
+    const isExtraSmallScreen = useMediaQuery((theme) => theme.breakpoints.down(500));
 
+    const isSmallScreen = () => {
+    const theme = useTheme();
 
+    const width = window.innerWidth;
     // const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
-    const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down(710));
-    const [anchorEl, setAnchorEl] = React.useState(null);
 
+    return width <= parseInt(theme.breakpoints.values.sm) && width >= 500;
+};
+    const [anchorEl, setAnchorEl] = React.useState(null);
     const handleMenuClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -47,35 +55,51 @@ export default function Header() {
         <Box sx={{flexGrow: 1}}>
             <AppBar className="header">
                 <Toolbar>
-                    {/*LOGO*/}
-                    {
-                        isSmallScreen ?
-                            (<NavLink
-                                className="header-logo-navlink"
-                                to="/"
-                            >
-                                <img className="header-company-logo-small" src={companyLogo} alt="logo"/>
-                            </NavLink>)
-                            :
-                            (<NavLink
-                                className="header-logo-navlink"
-                                to="/"
-                            >
-                                <img className="header-company-logo-big" src={companyLogo} alt="logo"/>
-                            </NavLink>)
+                    {isExtraSmallScreen && <NavLink style={{flexGrow: 1}}
+                                                    className="header-logo-navlink"
+                                                    to="/">
+                        <div className="header-logos">
+                            {/*<img className="header-logo-icon-small" src={companyLogo} alt="logo"/>*/}
+                            <img className="header-logo-text-extra-small" src={logoText} alt="logo"/>
+                        </div>
+
+                    </NavLink>}
+
+                    {isSmallScreen &&
+                        <NavLink style={{flexGrow: 1}}
+                                 className="header-logo-navlink"
+                                 to="/"
+                        >
+                            <div className="header-logos">
+                                {/*<img className="header-logo-icon-small" src={companyLogo} alt="logo"/>*/}
+                                <img className="header-logo-text-small" src={logoText} alt="logo"/>
+                            </div>
+
+                        </NavLink>
+                        // )
+                        // :
+                        // (<NavLink style={{flexGrow: 1}}
+                        //           className="header-logo-navlink"
+                        //           to="/"
+                        // >
+                        //     <div className="header-logos">
+                        //         {/*<img className="header-logo-icon-big" src={companyLogo} alt="logo"/>*/}
+                        //         <img className="header-logo-text-big" src={logoText} alt="logo"/>
+                        //     </div>
+                        // </NavLink>)
                     }
 
 
-                    <NavLink
-                        className="header-logo-navlink"
-                        style={{flexGrow: 1}}
-                        to="/"
-                    >
-                        <Typography variant="h4" component="div"
-                                    sx={{fontWeight: '600', color: '#F5F5F5'}}>
-                            WeCreate
-                        </Typography>
-                    </NavLink>
+                    {/*<NavLink*/}
+                    {/*    className="header-logo-navlink"*/}
+                    {/*    style={{flexGrow: 1}}*/}
+                    {/*    to="/"*/}
+                    {/*>*/}
+                    {/*    <Typography variant="h4" component="div"*/}
+                    {/*                sx={{fontWeight: '600', color: '#F5F5F5'}}>*/}
+                    {/*        WeCreate*/}
+                    {/*    </Typography>*/}
+                    {/*</NavLink>*/}
 
 
                     {isSmallScreen ? (<IconButton

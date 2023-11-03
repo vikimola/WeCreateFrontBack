@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import {Button, Paper, Typography} from '@mui/material';
+import {Button, Grid, Paper, Typography} from '@mui/material';
 import {makeStyles} from '@mui/styles';
 import CheckIcon from '@mui/icons-material/Check';
 import {FormattedMessage} from "react-intl";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 const useStyles = makeStyles((theme) => ({
     cookiePopup: {
@@ -10,19 +12,10 @@ const useStyles = makeStyles((theme) => ({
         bottom: 0,
         left: 0,
         width: '100%',
-        backgroundColor: '#333',
-        color: '#fff',
         padding: theme.spacing(2),
         textAlign: 'center',
         zIndex: 10
-    },
-    acceptButton: {
-        background: '#4CAF50',
-        color: 'white',
-        padding: theme.spacing(1, 2),
-        cursor: 'pointer',
-        // zIndex: 11
-    },
+    }
 }));
 
 function CookieConsent() {
@@ -34,25 +27,61 @@ function CookieConsent() {
         setShowPopup(false);
     };
 
+    const rejectCookies = () => {
+        localStorage.setItem('accepted-cookies', 'false');
+        setShowPopup(false);
+    };
+
+    const handleClose = () => {
+        setShowPopup(false);
+    };
+
     return (
         showPopup && (
             <Paper className={classes.cookiePopup}>
-                <Typography variant="body1" color="#E0E0E0" >
+                <Grid container justifyContent="flex-end" alignItems="center">
+                    <IconButton onClick={handleClose}>
+                        <CloseIcon/>
+                    </IconButton>
+                </Grid>
+                <Typography variant="body1" color="#E0E0E0">
                     <FormattedMessage
                         id='cookie.popup.text'
                     />
                 </Typography>
+
                 <br/>
                 <Button
                     variant="contained"
-                    className={classes.acceptButton}
+                    className="cookie-popup-button"
                     startIcon={<CheckIcon/>}
                     onClick={acceptCookies}
+                ><Typography variant="body2" color="#E0E0E0">
+                    <FormattedMessage
+                        id='cookie.popup.button.accept'
+                    />
+                </Typography>
+
+                </Button>
+
+
+                <Button
+                    variant="contained"
+                    className="cookie-popup-button"
+                    startIcon={<CheckIcon/>}
+                    onClick={rejectCookies}
                 >
-                    Accept
+                    <Typography variant="body2" color="#E0E0E0">
+                        <FormattedMessage
+                            id='cookie.popup.button.reject'
+                        />
+                    </Typography>
                 </Button>
             </Paper>
+
         )
+
+
     );
 }
 

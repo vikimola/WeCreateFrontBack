@@ -13,9 +13,10 @@ import CheckIcon from "@mui/icons-material/Check";
 export default function Contact(props) {
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
     const GradientContainer = props.bgGradient
-    const companyLogo = require("../image/page1/WeCreateLogo.png")
-    const outreachLight = require("../image/contact/outreach2.png")
-    const outreachDark = require("../image/contact/outreach.png")
+    const outreachLight = require("../image/contact/outreachLight.png")
+    const outreachDark = require("../image/contact/outreachDark.png")
+    const logoLight = require("../image/contact/logoLight.png")
+    const logoDark = require("../image/contact/logoDark.png")
     const [successMessage, setSuccessMessage] = useState('');
     const [warningMessage, setWarningMessage] = useState('');
     const [openSuccess, setOpenSuccess] = useState(false);
@@ -118,7 +119,11 @@ export default function Contact(props) {
 
                     <div className="contact-company-name">
                         <br/>
-                        <img className="contact-company-logo" src={companyLogo} alt="logo"/>
+                        {props.isDarkTheme ?
+                        <img className="contact-company-logo" src={logoDark} alt="logo"/>
+                            :
+                        <img className="contact-company-logo" src={logoLight} alt="logo"/>
+                        }
                         <Typography component={'span'} variant="body1">
                             <FormattedMessage id='contact.company.name'
                                               defaultMessage="WECREATE DESIGNS S.R.L."/>
@@ -450,6 +455,8 @@ export default function Contact(props) {
                              alt="outreach"/>}
                 </Grid>
             </Grid>
+             <br/>
+                        <br/>
         </GradientContainer>
 
 
