@@ -1,20 +1,24 @@
-import {Button, Link} from "@mui/material";
-import React, {useContext} from "react";
+import {Link} from "@mui/material";
+import React from "react";
 import {FormattedMessage} from "react-intl";
 import Typography from "@mui/material/Typography";
-import ChangeLangButtons from "./changeLangButtons";
-import {BsToggleOff, BsToggleOn} from "react-icons/bs";
-import {LanguageContext} from "./languageProvider";
 import {FaFacebookF, FaInstagram} from "react-icons/fa";
+import companyLogo from "../image/page1/WeCreateLogo.png";
 
 
 export default function FooterLeft(props) {
-    const companyLogo = require("../image/page1/WeCreateLogo.png")
+    const logoLight = require("../image/footer/logoLight.png")
+    const logoDark = require("../image/footer/logoDark.png")
 
     return (
         <div className="footer-left">
             <div className="footer-left-div">
-                <img className="company-logo-footer" src={companyLogo} alt="logo"/>
+                {
+                    props.isDarkTheme ? <img className="company-logo-footer" src={logoDark} alt="logo"/>
+                    :
+                    <img className="company-logo-footer" src={logoLight} alt="logo"/>
+                }
+
                 <Typography variant="body1">
                     <FormattedMessage id='footer.company.name'
                                       defaultMessage="WECREATE DESIGNS S.R.L."
@@ -30,7 +34,7 @@ export default function FooterLeft(props) {
                           alignItems: 'center',
                           padding: '1em 0.5em',
                           fontSize: '20px',
-                          color: '#F5F5F5',
+                          // color: '#F5F5F5',
                           '&:hover': {
                               color: '#00BFA5'
                           },
@@ -45,7 +49,7 @@ export default function FooterLeft(props) {
                     alignItems: 'center',
                     padding: '1em 0.5em',
                     fontSize: '24px',
-                    color: '#F5F5F5',
+                    // color: '#F5F5F5',
                     '&:hover': {
                         color: '#00BFA5', // Change to desired hover color
                     },

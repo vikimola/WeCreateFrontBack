@@ -2,7 +2,6 @@ import {Button, Link} from "@mui/material";
 import React, {useContext} from "react";
 import {FormattedMessage} from "react-intl";
 import Typography from "@mui/material/Typography";
-import {FaFacebookF, FaInstagram} from "react-icons/fa";
 import ChangeLangButtons from "./changeLangButtons";
 import {LanguageContext} from "./languageProvider";
 import {BsToggleOff, BsToggleOn} from "react-icons/bs";
@@ -41,7 +40,8 @@ export default function FooterMiddle(props) {
                   target="_blank" rel="noopener" color="inherit" sx={{textDecoration: 'none'}}>
                 wecreate.designs.srl@gmail.com
             </Link>
-            <br/>
+                       <div style={{margin: '0.5rem 0'}}></div>
+
         </Typography>
 
 

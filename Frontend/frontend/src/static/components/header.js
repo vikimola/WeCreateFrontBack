@@ -1,31 +1,24 @@
 import {Box, Menu, styled, useMediaQuery} from "@mui/material";
-import companyLogo from "../image/page1/WeCreateLogo.png";
 import {FormattedMessage} from "react-intl";
 import React from "react";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import AppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
-import Typography from "@mui/material/Typography";
 import {NavLink} from "react-router-dom";
-import logoText from "../image/header/logoText.png";
-import { useTheme } from '@material-ui/core/styles';
+import {useTheme} from '@material-ui/core/styles';
 
 
-// FormattedMessage.propTypes = {children: PropTypes.node};
 export default function Header() {
-    const logoIcon = require("../image/header/logoIcon.png");
     const logoText = require("../image/header/logoText.png");
-    const isExtraSmallScreen = useMediaQuery((theme) => theme.breakpoints.down(500));
-
-    const isSmallScreen = () => {
+    const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down(750));
+    const isExtraSmallScreenLogo = useMediaQuery((theme) => theme.breakpoints.down(350));
     const theme = useTheme();
+    const isSmallScreenLogo = useMediaQuery(theme.breakpoints.between(350, theme.breakpoints.values.sm));
+    const isMediumScreenLogo = useMediaQuery(theme.breakpoints.between(theme.breakpoints.values.sm, theme.breakpoints.values.md));
+    const isLargeScreenLogo = useMediaQuery(theme.breakpoints.up(theme.breakpoints.values.md));
 
-    const width = window.innerWidth;
-    // const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
-    return width <= parseInt(theme.breakpoints.values.sm) && width >= 500;
-};
     const [anchorEl, setAnchorEl] = React.useState(null);
     const handleMenuClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -55,52 +48,53 @@ export default function Header() {
         <Box sx={{flexGrow: 1}}>
             <AppBar className="header">
                 <Toolbar>
-                    {isExtraSmallScreen && <NavLink style={{flexGrow: 1}}
+                    {
+                        isExtraSmallScreenLogo && <NavLink style={{flexGrow: 1}}
                                                     className="header-logo-navlink"
                                                     to="/">
                         <div className="header-logos">
-                            {/*<img className="header-logo-icon-small" src={companyLogo} alt="logo"/>*/}
                             <img className="header-logo-text-extra-small" src={logoText} alt="logo"/>
                         </div>
 
                     </NavLink>}
 
-                    {isSmallScreen &&
+                    {
+                        isSmallScreenLogo &&
                         <NavLink style={{flexGrow: 1}}
                                  className="header-logo-navlink"
                                  to="/"
                         >
                             <div className="header-logos">
-                                {/*<img className="header-logo-icon-small" src={companyLogo} alt="logo"/>*/}
                                 <img className="header-logo-text-small" src={logoText} alt="logo"/>
                             </div>
 
                         </NavLink>
-                        // )
-                        // :
-                        // (<NavLink style={{flexGrow: 1}}
-                        //           className="header-logo-navlink"
-                        //           to="/"
-                        // >
-                        //     <div className="header-logos">
-                        //         {/*<img className="header-logo-icon-big" src={companyLogo} alt="logo"/>*/}
-                        //         <img className="header-logo-text-big" src={logoText} alt="logo"/>
-                        //     </div>
-                        // </NavLink>)
                     }
 
+                    {
+                        isMediumScreenLogo &&
+                        <NavLink style={{flexGrow: 1}}
+                                 className="header-logo-navlink"
+                                 to="/"
+                        >
+                            <div className="header-logos">
+                                <img className="header-logo-text-medium" src={logoText} alt="logo"/>
+                            </div>
 
-                    {/*<NavLink*/}
-                    {/*    className="header-logo-navlink"*/}
-                    {/*    style={{flexGrow: 1}}*/}
-                    {/*    to="/"*/}
-                    {/*>*/}
-                    {/*    <Typography variant="h4" component="div"*/}
-                    {/*                sx={{fontWeight: '600', color: '#F5F5F5'}}>*/}
-                    {/*        WeCreate*/}
-                    {/*    </Typography>*/}
-                    {/*</NavLink>*/}
+                        </NavLink>
+                    }
+                    {
+                        isLargeScreenLogo &&
+                        <NavLink style={{flexGrow: 1}}
+                                 className="header-logo-navlink"
+                                 to="/"
+                        >
+                            <div className="header-logos">
+                                <img className="header-logo-text-large" src={logoText} alt="logo"/>
+                            </div>
 
+                        </NavLink>
+                    }
 
                     {isSmallScreen ? (<IconButton
                             onClick={handleMenuClick}
