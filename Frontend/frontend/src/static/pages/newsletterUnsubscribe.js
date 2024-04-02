@@ -30,7 +30,7 @@ export default function NewsletterUnsubscribe(props) {
 
     const handleSubmit = async (formData) => {
         try {
-            await axios.post('backend/api/newsletter/unsubscribe/', formData);
+            await axios.post('http://127.0.0.1:8000/backend/api/newsletter/unsubscribe/', formData);
             const messageS = <FormattedMessage id='newsletter.unsub.alert.succ'/>
             setSuccessMessage(messageS);
             setOpenSuccess(true);

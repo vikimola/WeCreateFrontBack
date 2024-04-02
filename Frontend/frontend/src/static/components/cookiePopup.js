@@ -31,11 +31,11 @@ function CookieConsent() {
     }, []);
 
     const acceptCookies = () => {
-        Cookies.set('cookieConsentAccepted', 'true', { expires: 365 }); // Set cookie for 1 year
+        Cookies.set('cookieConsentAccepted', 'true', { expires: 365 });
         setShowConsent(false);
     };
     const rejectCookies = () => {
-        Cookies.set('cookieConsentAccepted', 'false', { expires: 365 }); // Set cookie for 1 year
+        Cookies.set('cookieConsentAccepted', 'false', { expires: 365 });
         setShowConsent(false);
     };
     const handleClose = () => {

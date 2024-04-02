@@ -79,6 +79,8 @@ export default function Page1(props) {
 
             </Grid>
 
+<br/>
+<br/>
 
             <Grid container item xs={12} className="page1-bottom">
 

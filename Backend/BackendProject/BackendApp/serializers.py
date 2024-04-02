@@ -12,8 +12,6 @@ class NewsletterUserSignUpSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsletterUser
         fields = '__all__'
-
-
 class NewsletterCreationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Newsletter

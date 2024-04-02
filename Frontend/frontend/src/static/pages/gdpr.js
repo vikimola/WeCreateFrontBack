@@ -36,7 +36,9 @@ export default function Gdpr(props) {
                     <br/>
                     <br/>
                     <FormattedMessage  id="gdpr.info.collect.3.title"
-                                      defaultMessage="The following types of personal information can be collected, stored, and used:"/>
+                                      defaultMessage="The following types
+                                      of personal information can be collected,
+                                      stored, and used:"/>
                     <ul>
                         <li>
                             <FormattedMessage id="gdpr.info.collect.3.email"/>

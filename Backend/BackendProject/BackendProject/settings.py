@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lmam^a^+jwicw%gbe_i3rl^4bek0kf09lqe-yn82bjp8!h1+dr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # SMTP Configuration
 EMAIL_HOST = 'smtp.office365.com'
@@ -59,17 +59,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "corsheaders.middleware.CorsMiddleware",
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
 
 ]
 
-CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOW_ORIGIN_WHITELIST = (
-    'http://localhost:3001',
-    'http://localhost:3000',
-)
+CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ORIGIN_WHITELIST = (
+#     'http://localhost:3001',
+#     'http://localhost:3000',
+# )
 
 ROOT_URLCONF = 'BackendProject.urls'
 
@@ -139,3 +138,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+

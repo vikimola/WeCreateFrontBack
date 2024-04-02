@@ -25,10 +25,9 @@ export default function Services(props) {
     const [warningMessage, setWarningMessage] = useState('');
     const [openSuccess, setOpenSuccess] = useState(false);
     const [openWarning, setOpenWarning] = useState(false);
-    const [formData, setFormData] = useState({
-        email: '',
+    const [formData, setFormData] =
+        useState({email: '',
     });
-
     const handleChange = (e) => {
         const {id, value} = e.target;
         // console.log(id, value);
@@ -37,10 +36,9 @@ export default function Services(props) {
             [id]: value,
         });
     };
-
-    const handleSubmit = async (formData) => {
+    const handleSubmit = async () => {
         try {
-            await axios.post('backend/api/newsletter/subscribe/', formData);
+            await axios.post('http://127.0.0.1:8000/backend/api/newsletter/subscribe/', formData);
             const messageS = <FormattedMessage id='serv.sub.alert.succ'/>
             setSuccessMessage(messageS);
             setOpenSuccess(true);

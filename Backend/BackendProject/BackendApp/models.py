@@ -26,8 +26,6 @@ class NewsletterUser(models.Model):
 
     def __str__(self):
         return self.email
-
-
 class Newsletter(models.Model):
     EMAIL_STATUS_CHOICES = (
         ('Draft', 'Draft'),
